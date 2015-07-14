@@ -1,0 +1,7 @@
+h1 This is the index page and should show all the comments
+-@board = params["board_id"]
+-@post_id = params["post_id"]
+- comments = Comment.where(post_id: @post_id )
+- comments.each do |comment|
+  =comment.body
+  = "Comment Created by #{comment.author_id}"

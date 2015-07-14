@@ -11,8 +11,8 @@ class Ability
         can :read, :all
         can :create, Comment
         can :create, :update, :destroy, Comment, author: user_id
-        can :create, :update, :destroy, Post, author: user_id
-        can :creaate, :update, :destroy, Board, moderator: user_id
+        can :create, :update, :destroy, Comment, moderator: user_id
+        can :create, :update, :destroy, Comment, admin: user_id
       end
     
     # The first argument to `can` is the action you are giving the user
