@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :board do
-    sequence(:id) {|i| i}
-    moderator_id 2
+    name "something"
+    moderator factory: :user
   end
 end

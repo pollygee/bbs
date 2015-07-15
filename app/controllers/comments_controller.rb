@@ -1,7 +1,10 @@
+require 'pry'
 class CommentsController < ApplicationController
 
   def index
-    @comments  = Comment.find_by(post_id: 1)
+    post = Post.find(params[:post_id])
+    @comments  = post.comments
+
   end
 
   def create
@@ -10,5 +13,9 @@ class CommentsController < ApplicationController
 
   def show
 
+  end
+
+  def destroy
+    authorize 
   end
 end
